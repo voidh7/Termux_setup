@@ -19,6 +19,7 @@ clear
 echo "Select your user type:"
 echo "[1] Hacker (offensive cybersecurity)"
 echo "[2] Web Developer"
+echo "[3] Low level Developer"
 
 read -p "> " TYPESETUP
 
@@ -40,13 +41,24 @@ case "$TYPESETUP" in
     git clone https://github.com/omerbenamram/VulnerablePHP
     git clone https://github.com/juice-shop/juice-shop
     git clone https://github.com/LukaTheBrave/dvwa-lit
+    echo "[✓] Installed : SqlMap, Recon-NG, Sublist3r, Logger-Hell, VulterablePHP, Juice-Shop, Dvwa-lit"
     ;;
     
   2)
     echo "[*] Installing web dev environment..."
 
-    pkg install -y python nodejs
+    pkg install -y python nodejs php
     mkdir -p ~/projects
+    echo "[✓] Installed : Python, Nodejs, Php"
+    ;;
+
+  3)
+    echo "[*] Installing Languages..."
+    pkg install clang nasm -y
+    echo "[*] Installing Tools..."
+    pkg install micro make cmake -y
+    mkdir -p ~/projects
+    echo "[✓] Installed : Gcc, Clang++, Nasm, Make, Cmake, Micro"
     ;;
     
   *)
